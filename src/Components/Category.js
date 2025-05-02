@@ -6,7 +6,9 @@ import { toast } from "react-toastify";
 import react from "react";
 // react
 function Category() {
+  // const [categoryName, setCategory] = useState("");
   const [categoryName, setCategory] = useState("");
+
   const [description, setDes] = useState("");
   const [thumbnail, setthumbnail] = useState({});
   const [thumbnailName, setthumbnailName] = useState("");
