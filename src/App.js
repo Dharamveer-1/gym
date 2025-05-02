@@ -28,6 +28,9 @@ import UpdateCategory from './Components/UpdateCategory';
 import UpdatePackage from './Components/UpdatePackage';
 import UpdateExercise from './Components/UpdateExercise';
 
+import UserMaster from './Components/UserMaster';
+
+
 
 
 
@@ -71,6 +74,9 @@ function App() {
 
         <Route path="/singleexercise/:id" element={<SingleExercise />} />
         <Route path="/updateexercise/:id" element={<UpdateExercise />} />
+
+        <Route path='/user' element={<UserMaster/>}/>
+
 
 
 
