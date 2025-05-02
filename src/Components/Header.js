@@ -135,9 +135,9 @@ const Header = () => {
               <li className="active">
                 <Link to={'/contact'}>Contact</Link>
               </li>
-              <li className="active">
+              {/* <li className="active">
                 <Link to={'/sign'}> Admin Login</Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>
