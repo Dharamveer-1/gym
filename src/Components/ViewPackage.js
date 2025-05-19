@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import AdminHeader from "./AdminHeader";
-// import AdminFooter from "./AdminFooter"
+import AdminFooter from "./AdminFooter";
 // import Package from "./Package"
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ function ViewPackage() {
   const [isDelete, setIsDelete] = useState(false);
   useEffect(() => {
     axios
-      .post("http://localhost:3000/api/package/getall")
+      .post("http://localhost:2000/api/package/getall")
       .then((res) => {
         console.log(res.data);
         setData(res.data.data);
@@ -26,7 +26,7 @@ function ViewPackage() {
       let data = {
           _id: id
       }
-      axios.post("http://localhost:3000/api/package/delete",data)
+      axios.post("http://localhost:2000/api/package/delete",data)
       .then((res)=>{
           console.log(res.data)
           if(res.data.success){
@@ -63,59 +63,84 @@ function ViewPackage() {
           </div>
         </div>
       </section>
+
       <div className="container"></div>
       <div className="row"></div>
       <div className="col-lg-12 text-center"></div>
-      <div className="row">
-        <div className="col-lg-12 text-center">
-          <h1>View Package</h1>
-          <br></br>
-          <table className="table table-bordered table-striped">
-            <tbody>
-              <tr>
-                <th>Sr No</th>
-                <th>Package Name</th>
-                <th>Thumbnail</th>
-                <th>Cost</th>
-                <th>Duration</th>
-                <th>Description</th>
-                <th>Action</th>
-                <th>Views</th>
-                <th>Edit</th>
 
+      <div className="row"></div>
+    <div className="col-lg-12 text-center mb-4">
+      <h1 className=" fw-bold text-">View Package</h1><br></br>
+      <hr style={{ borderTop: "", width: "200px", margin: "auto", }} />
+       
+       <div className="col-lg-12">
+      <div className="table-responsive">
+        <table className="table table-bordered table-hover align-middle shadow-sm">
+          <thead className="table-primary text-center">
+            <tr>
+              <th>Sr No</th>
+              <th>Package Name</th>
+              <th>Thumbnail</th>
+              <th>Cost</th>
+              <th>Duration</th>
+              <th>Description</th>
+              <th>Action</th>
+              <th>View</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody className="text-center">
+            {data.map((el, index) => (
+              <tr key={el._id}>
+                <td>{index + 1}</td>
+                <td className="fw-semibold">{el.packageName}</td>
+                <td>
+                  <img
+                    src={`http://localhost:2000/${el.thumbnail}`}
+                    alt="thumbnail"
+                    className="img-thumbnail"
+                    style={{ width: "100px", borderRadius: "10px" }}
+                  />
+                </td>
+                <td><span className="badge bg-success fs-6">₹{el.cost}</span></td>
+                <td>{el.duration}</td>
+                <td>{el.description}</td>
+                <td>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => deleteData(el._id)}
+                    title="Delete"
+                  >
+                    <i className="bi bi-trash3"></i>
+                  </button>
+                </td>
+                <td>
+                  <Link
+                    to={`/singlepackage/${el._id}`}
+                    className="btn btn-info btn-sm"
+                    title="View Details"
+                  >
+                    <i className="bi bi-eye"></i>
+                  </Link>
+                </td>
+                <td>
+                  <Link
+                    to={`/updatepackage/${el._id}`}
+                    className="btn btn-success btn-sm"
+                    title="Edit"
+                  >
+                    <i className="bi bi-pencil-square"></i>
+                  </Link>
+                </td>
               </tr>
-
-              {
-                data.map((el, index) => {
-                return (
-                  <>
-                    <tr>
-                      <td>{index+1}</td>
-                      {/* <td>{el.srNo}</td> */}
-                      <td>{el.packageName}</td>
-                      <td>
-                        {<img
-                          src={"http://localhost:3000/" + el.thumbnail}
-                          width="200px"
-                        />}
-                      </td>
-                      <td>{el.cost}</td>
-                      <td>{el.duration}</td>
-                      <td>{el.description}</td>
-                      {/* <td>{el.action}</td>
-                      <td>{el.views}</td> */}
-                      <td><button className="btn btn-outline-danger" onClick={()=>{deleteData(el._id)}}><i class="bi bi-trash3"></i></button></td>
-                      <td> <Link to={'/singlepackage/'+el._id} className="btn btn-outline-info"><i class="bi bi-eye"></i></Link> </td>
-                      <td> <Link to={'/updatepackage/'+el._id} className="btn btn-outline-success"><i class="bi bi-pencil-square"></i></Link> </td>
-
-                    </tr>
-                  </>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
+    </div>
+  </div>
+  <AdminFooter/>
+
     </>
   );
 }

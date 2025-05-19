@@ -32,7 +32,7 @@ function UpdateCategory() {
       _id: id,
     };
     axios
-      .post("http://localhost:3000/api/category/getsingle", data)
+      .post("http://localhost:2000/api/category/getsingle", data)
       .then((res) => {
         console.log(res.data);
         setCategory(res.data.data.categoryName);
@@ -55,7 +55,7 @@ function UpdateCategory() {
     // data.append("categoryName", categoryName);
     // data.append("description", description);
    
-    axios.post("http://localhost:3000/api/category/update", data)
+    axios.post("http://localhost:2000/api/category/update", data)
 
       .then((res) => {
         console.log(res.data);

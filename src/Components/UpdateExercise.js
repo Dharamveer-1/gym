@@ -55,7 +55,7 @@ function UpdateExercise() {
     // data.append("categoryName", categoryName);
     // data.append("description", description);
    
-    axios.post("http://localhost:3000/api/exercise/update", data)
+    axios.post("http://localhost:2000/api/exercise/update", data)
 
       .then((res) => {
         console.log(res.data);

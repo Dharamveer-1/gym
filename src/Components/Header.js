@@ -4,78 +4,8 @@ const Header = () => {
   return (
     <>
    
-  <div className="offcanvas-menu-overlay" />
-  <div className="offcanvas-menu-wrapper">
-    <div className="canvas-close">
-      <i className="fa fa-close" />
-    </div>
-    <div className="canvas-search search-switch">
-      <i className="fa fa-search" />
-    </div>
-    <nav className="canvas-menu mobile-menu">
-      <ul>
-        {/* <li>
-          <a href="./index.html">Home</a>
-        </li> */}
-        {/* <li>
-          <a href="./about-us.html">About Us</a>
-        </li> */}
-        {/* <li>
-          <a href="./class-details.html">Classes</a>
-        </li> */}
-        {/* <li>
-          <a href="./services.html">Services</a>
-        </li> */}
-        {/* <li>
-          <a href="./team.html">Our Team</a>
-        </li> */}
-        {/* <li>
-          <a href="#">Pages</a>
-          <ul className="dropdown">
-            <li>
-              <a href="./about-us.html">About us</a>
-            </li>
-            <li>
-              <a href="./class-timetable.html">Classes timetable</a>
-            </li>
-            <li>
-              <a href="./bmi-calculator.html">Bmi calculate</a>
-            </li>
-            <li>
-              <a href="./team.html">Our team</a>
-            </li>
-            <li>
-              <a href="./gallery.html">Gallery</a>
-            </li>
-            <li>
-              <a href="./blog.html">Our blog</a>
-            </li>
-            <li>
-              <a href="./404.html">404</a>
-            </li>
-          </ul>
-        </li> */}
-        {/* <li>
-          <Link to={'/contact'}>Contact</Link>
-        </li> */}
-      </ul>
-    </nav>
-    <div id="mobile-menu-wrap" />
-    <div className="canvas-social">
-      <a href="#">
-        <i className="fa fa-facebook" />
-      </a>
-      <a href="#">
-        <i className="fa fa-twitter" />
-      </a>
-      <a href="#">
-        <i className="fa fa-youtube-play" />
-      </a>
-      <a href="#">
-        <i className="fa fa-instagram" />
-      </a>
-    </div>
-  </div>
+  {/* <div className="offcanvas-menu-overlay" /> */}
+
   {/* Offcanvas Menu Section End */}
   {/* Header Section Begin */}
   <header className="header-section">
@@ -91,6 +21,7 @@ const Header = () => {
         <div className="col-lg-6">
           <nav className="nav-menu">
             <ul>
+              
               {/* <li>
                 <a href="./index.html">Home</a>
               </li> */}
@@ -132,33 +63,60 @@ const Header = () => {
                   </li>
                 </ul>
               </li> */}
-              <li className="active">
-                <Link to={'/contact'}>hello</Link>
+                  <li className="active">
+                <Link to={'/'}>Home</Link>
               </li>
+                     <li className="active">
+                <Link to={'/aboutus'}>About Us</Link>
+              </li>
+
               <li className="active">
+                <Link to={'/contact'}>Contact</Link>
+              </li>
+
+          
+
+              {/* <li className="active">
                 <Link to={'/sign'}> Admin Login</Link>
+              </li> */}
+
+              <li className="active">
+                <Link to={'/signuser'}>  Login</Link>
               </li>
+
+              <li className="active">
+                <Link to={'/register'}>  Register</Link>
+              </li>
+
             </ul>
           </nav>
         </div>
+        
+        
         <div className="col-lg-3">
           <div className="top-option">
-            <div className="to-search search-switch">
+            {/* <div className="to-search search-switch">
               <i className="fa fa-search" />
-            </div>
+            </div> */}
             <div className="to-social">
-              <a href="#">
-                <i className="fa fa-facebook" />
-              </a>
-              <a href="#">
+               <Link to="https://www.facebook.com/" target="_blank" >
+                  <i className="fa fa-facebook" />
+                </Link>
+              {/* <a href="#">
                 <i className="fa fa-twitter" />
-              </a>
-              <a href="#">
+              </a> */}
+              <Link to="https://www.youtube.com/" target="_blank">
                 <i className="fa fa-youtube-play" />
-              </a>
-              <a href="#">
-                <i className="fa fa-instagram" />
-              </a>
+              </Link>
+             
+                <Link to="https://www.instagram.com/" target="_blank">
+                  <i className="fa fa-instagram" />
+                </Link>
+
+                  <Link to="https://www.gmail.com/" target="_blank" >
+                  <i className="fa fa-envelope" />
+                </Link>
+                
             </div>
           </div>
         </div>
@@ -168,6 +126,7 @@ const Header = () => {
       </div>
     </div>
   </header>
+     
 </>
 
     

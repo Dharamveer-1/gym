@@ -10,7 +10,7 @@ function SingleExercise (){
         let data={
             _id:id
         }
-        axios.post('http://localhost:3000/api/exercise/getsingle',data)
+        axios.post('http://localhost:2000/api/exercise/getsingle',data)
         .then((res)=>{
             console.log(res.data)
             setData(res.data.data)
@@ -35,7 +35,7 @@ function SingleExercise (){
                     <td>{data.exerciseName}</td>
                     <td>
                         {<img
-                          src={"http://localhost:3000/" + data.thumbnail}
+                          src={"http://localhost:2000/" + data.thumbnail}
                           width="200px"
                         />}
                       </td>

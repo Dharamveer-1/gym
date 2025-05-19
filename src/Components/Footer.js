@@ -2,16 +2,17 @@ import { Link } from "react-router-dom"
 export default function Footer(){
     return(
         <>
+        
          {/* Footer Section Begin */}
   <section className="footer-section">
-    <div className="container">
+    <div className="container py-5">
       <div className="row">
         <div className="col-lg-4">
           <div className="fs-about">
             <div className="fa-logo">
-              <a href="#">
-                <img src="assets/img/logo.png" alt="" />
-              </a>
+              {/* <a href="#">
+                <img src="/assets/img/logo.png" alt="" />
+              </a> */}
             </div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

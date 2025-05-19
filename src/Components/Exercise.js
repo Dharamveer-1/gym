@@ -1,6 +1,6 @@
 import { useState } from "react";
-// import AdminFooter from "./AdminFooter";
 import AdminHeader from "./AdminHeader";
+import AdminFooter from "./AdminFooter";
 import axios from "axios";
 import { toast } from "react-toastify";
 import react from "react";
@@ -30,7 +30,7 @@ function Exercise() {
     data.append("thumbnail",thumbnail);
   
     axios
-    .post("http://localhost:3000/api/exercise/add", data)
+    .post("http://localhost:2000/api/exercise/add", data)
     .then((res) => {
       console.log(res.data);
       if (res.data.success) {
@@ -68,7 +68,7 @@ function Exercise() {
     </div>
   </section>
 
-      <div className="container my-4">
+      {/* <div className="container my-4">
         <h1 className="text-center">Add Exercise</h1><br></br>
         <form onSubmit={handleForm}>
           <div className="row">
@@ -99,14 +99,78 @@ function Exercise() {
                 className="form-control"
               /><br></br>
             </div>
-            <div className="col-2">
+            <div className="col-2 mx-auto">
             <button type="submit" value="submit" className="btn btn-success">
                 Submit
               </button>
             </div>
           </div>
         </form>
+      </div> */}
+      <div className="container my-5">
+  <div className="row justify-content-center">
+    <div className="col-md-8">
+      <div className="card shadow rounded-4 border-0">
+        <div className="card-body p-5">
+                 <h1 className="text-center fw-bold mb-4 text- display-3">
+  Add <span style={{ color: "#ff6600" }}>Exercise</span>
+</h1>
+
+          <form onSubmit={handleForm}>
+            {/* Exercise Name */}
+            <div className="mb-4">
+              <label className="form-label fw-semibold">Exercise Name</label>
+              <input
+                type="text"
+                value={exerciseName}
+                onChange={changeExercise}
+                className="form-control form-control-lg"
+                placeholder="Enter exercise name"
+              />
+            </div>
+
+            {/* Description */}
+            <div className="mb-4">
+              <label className="form-label fw-semibold">Description</label>
+              <input
+                type="text"
+                value={description}
+                onChange={changeDes}
+                className="form-control form-control-lg"
+                placeholder="Enter description"
+              />
+            </div>
+
+            {/* Thumbnail */}
+            <div className="mb-4">
+              <label className="form-label fw-semibold">Thumbnail</label>
+              <input
+                type="file"
+                value={thumbnailName}
+                onChange={changethumbnail}
+                className="form-control form-control-lg"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="text-center mt-4">
+              <button
+                type="submit"
+                value="submit"
+                className="btn btn-success btn-lg px-5 shadow"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<AdminFooter/>
     </>
   );
 }

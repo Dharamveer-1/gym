@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import AdminHeader from "./AdminHeader";
-// import AdminFooter from "./AdminFooter"
+import AdminFooter from "./AdminFooter"
 // import Booking from "./Booking"
 // import {Link} from "react-router-dom"
 
@@ -10,7 +10,7 @@ function ViewBooking() {
   const [data, setData] = useState([]);
   const [isDelete, setIsDelete] = useState(false);
   useEffect(() => {
-    axios.post("http://localhost:3000/api/booking/getall")
+    axios.post("http://localhost:2000/api/booking/getall")
       .then((res) => {
         console.log(res.data);
         setData(res.data.data);
@@ -24,7 +24,7 @@ function ViewBooking() {
     let data = {
         _id: id
     }
-    axios.post("http://localhost:3000/api/booking/delete",data)
+    axios.post("http://localhost:2000/api/booking/delete",data)
     .then((res)=>{
         console.log(res.data)
         if(res.data.success){
@@ -66,12 +66,17 @@ function ViewBooking() {
       <div className="container"></div>
       <div className="row"></div>
       <div className="col-lg-12 text-center"></div>
+
       <div className="row">
-        <div className="col-lg-12 text-center">
-          <h1>View Booking</h1>
+        <div className="col-lg-12 text-center mb-4">
+          <h1 className="fw-bold text-">View Booking</h1>
+          <hr style={{ borderTop: "", width: "200px", margin: "auto" }}/>
+          </div>
           <br></br>
-          <table className="table table-bordered table-striped">
-            <tbody>
+          <div className="col-lg-12">
+            <div className="table-responsive"></div>
+          <table className="table table-bordered table-hover align-middle shadow-sm">
+            <thead className="table-primary text-center">
               <tr>
                 <th>Sr No</th>
                 <th>cardno</th>
@@ -80,30 +85,25 @@ function ViewBooking() {
                 <th>expiredate</th>
                 <th>Action</th>
               </tr>
-             
+              </thead>
+              <tbody className="text-center">
                 {
-                // data.map((el, index) => {
-                    data.map((el,index)=>{
-                        return(
-                            <>
-                                <tr>
-                                    <td>{index+1}</td>
-                                    <td>{el.cardno}</td>
-                                    <td>{el.cvp}</td>
-                                    <td>{el.dateofBooking}</td>
-                                    <td>{el.expiredate}</td>
-                                    <td><button className="btn btn-outline-danger" onClick={()=>{deleteData(el._id)}}><i class="bi bi-trash3"></i></button></td>
-                                  
-                                
+                    data.map((el,index)=>(
+                      <tr key={el._id}>
+                      <td>{index+1}</td>
+                      <td className="fw-semibold">{el.cardno}</td>
+                    <td>{el.cvp}</td>
+                     <td>{el.dateofBooking}</td>
+                     <td>{el.expiredate}</td>
+                     <td><button className="btn btn-outline-danger" onClick={()=>{deleteData(el._id)}}><i class="bi bi-trash3"></i></button></td>
+                         
                                 </tr>
-                            </>
-                        )
-                    })                  
-}       
+                    ))}     
             </tbody>
           </table>
         </div>
       </div>
+      <AdminFooter/>
     </>
   );
 }

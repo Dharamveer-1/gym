@@ -64,9 +64,9 @@ export default function UserHeader() {
         <a href="#">
           <i className="fa fa-facebook" />
         </a>
-        <a href="#">
+        {/* <a href="#">
           <i className="fa fa-twitter" />
-        </a>
+        </a> */}
         <a href="#">
           <i className="fa fa-youtube-play" />
         </a>
@@ -91,7 +91,7 @@ export default function UserHeader() {
             <nav className="nav-menu">
               <ul>
                 <li>
-                  <a href="./index.html">Home</a>
+                 <Link to={"/user/home"}>Home</Link>
                 </li>
                 {/* <li>
                   <a href="./about-us.html">About Us</a>
@@ -108,11 +108,11 @@ export default function UserHeader() {
                 <li>
                   <a href="#">Category</a>
                   <ul className="dropdown">
+                    {/* <li>
+                      <Link to={"/user/category"}>Add</Link>
+                    </li> */}
                     <li>
-                      <Link to={"/admin/category"}>Add</Link>
-                    </li>
-                    <li>
-                      <Link to={"/admin/viewcategory"}>View</Link>
+                      <Link to={"/user/userviewcategory"}>View</Link>
                     </li>
                   </ul>
                 </li> 
@@ -120,11 +120,11 @@ export default function UserHeader() {
                 <li>
                   <a href="#">Package</a>
                   <ul className="dropdown">
+                    {/* <li>
+                      <Link to={"/user/package"}>Add</Link>
+                    </li> */}
                     <li>
-                      <Link to={"/admin/package"}>Add</Link>
-                    </li>
-                    <li>
-                      <Link to={"/admin/viewpackage"}>View</Link>
+                      <Link to={"/user/userviewpackage"}>View</Link>
                     </li>
                   </ul>
                 </li> 
@@ -132,11 +132,11 @@ export default function UserHeader() {
                 <li>
                   <a href="#">Exercise</a>
                   <ul className="dropdown">
+                    {/* <li>
+                      <Link to={"/user/exercise"}>Add</Link>
+                    </li> */}
                     <li>
-                      <Link to={"/admin/exercise"}>Add</Link>
-                    </li>
-                    <li>
-                      <Link to={"/admin/viewexercise"}>View</Link>
+                      <Link to={"/user/userviewexercise"}>View</Link>
                     </li>
                   </ul>
                 </li>
@@ -148,19 +148,14 @@ export default function UserHeader() {
                       <Link to={"/admin/booking"}>Add</Link>
                     </li> */}
                     <li>
-                      <Link to={"/admin/viewbooking"}>View</Link>
+                      <Link to={"/user/userviewbooking"}>View</Link>
                     </li>
                   </ul>
                 </li>
 
-                <li>
-                  <Link to="/sign">Logout</Link>
-                  <ul className="dropdown">
-                    {/* <li>
-                      <Link to={"/admin/logout"}>Logout</Link>
-                    </li> */}
-                  </ul>
-                </li>
+               <li className="active">
+                           <Link to={'/signuser'}>  Logout</Link>
+                         </li>
 
 
                 <li>
@@ -176,22 +171,26 @@ export default function UserHeader() {
           </div>
           <div className="col-lg-3">
             <div className="top-option">
-              <div className="to-search search-switch">
+              {/* <div className="to-search search-switch">
                 <i className="fa fa-search" />
-              </div>
+              </div> */}
               <div className="to-social">
-                <a href="#">
+                <Link to="https://www.facebook.com/" target="_blank" >
                   <i className="fa fa-facebook" />
-                </a>
-                <a href="#">
+                </Link>
+                {/* <>
                   <i className="fa fa-twitter" />
-                </a>
-                <a href="#">
+                </a> */}
+                <Link to="https://www.youtube.com/" target="_blank" >
                   <i className="fa fa-youtube-play" />
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="https://www.instagram.com/" target="_blank" >
                   <i className="fa fa-instagram" />
-                </a>
+                </Link>
+                
+                 <Link to="https://www.gmail.com/" target="_blank" >
+                  <i className="fa fa-envelope" />
+                </Link>
               </div>
             </div>
           </div>

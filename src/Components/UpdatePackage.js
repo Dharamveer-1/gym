@@ -32,7 +32,7 @@ function UpdatePackage() {
       _id: id,
     };
     axios
-      .post("http://localhost:3000/api/package/getsingle", data)
+      .post("http://localhost:2000/api/package/getsingle", data)
       .then((res) => {
         console.log(res.data);
         setPackage(res.data.data.packageName);
@@ -55,7 +55,7 @@ function UpdatePackage() {
     // data.append("categoryName", categoryName);
     // data.append("description", description);
    
-    axios.post("http://localhost:3000/api/package/update", data)
+    axios.post("http://localhost:2000/api/package/update", data)
 
       .then((res) => {
         console.log(res.data);

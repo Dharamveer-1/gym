@@ -91,10 +91,10 @@ export default function AdminHeader() {
             <nav className="nav-menu">
               <ul>
                 <li>
-                  <a href="./index.html">Home</a>
+                  <Link to={'/admin/dashboard'}>Home</Link>
                 </li>
                 {/* <li>
-                  <a href="./about-us.html">About Us</a>
+                  <Link to="./about-us.html">About Us</Link>
                 </li> */}
                 {/* <li>
                   <a href="./class-details.html">Classes</a>
@@ -153,14 +153,18 @@ export default function AdminHeader() {
                   </ul>
                 </li>
 
-                <li>
-                  <Link to="/sign">Logout</Link>
+                   <li>
+                  <a href="#">User</a>
                   <ul className="dropdown">
-                    {/* <li>
-                      <Link to={"/admin/logout"}>Logout</Link>
-                    </li> */}
+                    <li>
+                      <Link to={"/admin/viewuser"}>View</Link>
+                    </li>
+                    
                   </ul>
-                </li>
+                </li> 
+                <li className="active">
+                <Link to={'/signuser'}>  Logout</Link>
+              </li>
 
 
                 <li>
@@ -176,22 +180,27 @@ export default function AdminHeader() {
           </div>
           <div className="col-lg-3">
             <div className="top-option">
-              <div className="to-search search-switch">
+              {/* <div className="to-search search-switch">
                 <i className="fa fa-search" />
-              </div>
+              </div> */}
               <div className="to-social">
-                <a href="#">
+                <Link to="https://www.facebook.com/" target="_blank" >
                   <i className="fa fa-facebook" />
-                </a>
-                <a href="#">
+                </Link>
+                {/* <a href="#">
                   <i className="fa fa-twitter" />
-                </a>
-                <a href="#">
+                </a> */}
+                <Link to="https://www.youtube.com/" target="_blank" >
                   <i className="fa fa-youtube-play" />
-                </a>
-                <a href="#">
+                </Link>
+
+                <Link to="https://www.instagram.com/" target="_blank">
                   <i className="fa fa-instagram" />
-                </a>
+                </Link>
+
+                  <Link to="https://www.gmail.com/" target="_blank" >
+                  <i className="fa fa-envelope" />
+                </Link>
               </div>
             </div>
           </div>

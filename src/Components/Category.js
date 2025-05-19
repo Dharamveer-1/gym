@@ -1,12 +1,13 @@
 import { useState } from "react";
 // import AdminFooter from "./AdminFooter";
 import AdminHeader from "./AdminHeader";
+import AdminFooter from "./AdminFooter";
 import axios from "axios";
 import { toast } from "react-toastify";
 import react from "react";
+import ApiService from "./ApiService";
 // react
 function Category() {
-  // const [categoryName, setCategory] = useState("");
   const [categoryName, setCategory] = useState("");
 
   const [description, setDes] = useState("");
@@ -32,7 +33,7 @@ function Category() {
     data.append("thumbnail",thumbnail);
   
     axios
-    .post("http://localhost:3000/api/category/add", data)
+    .post("http://localhost:2000/api/category/add", data)
     .then((res) => {
       console.log(res.data);
       if (res.data.success) {
@@ -69,7 +70,7 @@ function Category() {
     </div>
   </section>
 
-      <div className="container my-4">
+      {/* <div className="container my-4">
         <h1 className="text-center">Add Category</h1><br></br>
         <form onSubmit={handleForm}>
           <div className="row">
@@ -93,24 +94,81 @@ function Category() {
               /><br></br>
             </div>
             
-            <div className="col-2">thumbnail</div>
+            <div className="col-2">Thumbnail</div>
             <div className="col-10">
               <input
                 type="file"
                 value={thumbnailName}
                 onChange={changethumbnail}
                 className="form-control"
-              />
+              /><br></br>
             </div>
-
-            <div className="col-2">
+            <div className="col-2 mx-auto">
              <button type="submit" value="submit" className="btn btn-success">
                 Submit
               </button>
             </div>
           </div>
         </form>
+      </div> */}
+      <div className="container my-5">
+  <div className="row justify-content-center">
+    <div className="col-md-8">
+      <div className="card shadow border-0 rounded-4">
+        <div className="card-body p-5">
+        <h1 className="text-center fw-bold mb-4 text- display-3">
+  Add <span style={{ color: "#ff6600" }}>Category</span>
+</h1>
+
+          <form onSubmit={handleForm}>
+            {/* Category Name */}
+            <div className="mb-4">
+              <label className="form-label fw-semibold">Category Name</label>
+              <input
+                type="text"
+                value={categoryName}
+                onChange={changeCategory}
+                className="form-control form-control-lg"
+                placeholder="Enter category name"
+              />
+            </div>
+
+            {/* Description */}
+            <div className="mb-4">
+              <label className="form-label fw-semibold">Description</label>
+              <input
+                type="text"
+                value={description}
+                onChange={changeDes}
+                className="form-control form-control-lg"
+                placeholder="Enter description"
+              />
+            </div>
+
+            {/* Thumbnail */}
+            <div className="mb-4">
+              <label className="form-label fw-semibold">Thumbnail</label>
+              <input
+                type="file"
+                value={thumbnailName}
+                onChange={changethumbnail}
+                className="form-control form-control-lg"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="text-center mt-4">
+              <button type="submit" className="btn btn-success btn-lg px-5 shadow">
+                Submit
+              </button>
+            </div>
+          </form>  
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+<AdminFooter/>
     </>
   );
 }
