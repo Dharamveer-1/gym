@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./Header";
+// import Header from "./Header";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -63,7 +63,10 @@ function SignUser() {
   <section
     className="breadcrumb-section set-bg"
     // data-setbg="/assets/img/breadcrumb-bg.jpg"
-    style={{backgroundImage:"url(/assets/img/breadcrumb-bg.jpg)"}}
+    style={{
+      backgroundImage:"url(/assets/img/breadcrumb-bg.jpg)",
+      
+    }}
   >
     <div className="container">
       <div className="row">

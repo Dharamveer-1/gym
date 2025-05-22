@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import UserHeader from "./UserHeader";
+import UserFooter from "./UserFooter";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -134,7 +135,7 @@ axios.post('http://localhost:2000/api/package/getsingle',data)
                     </div>
                 </form>
             </div>
-        
+        <UserFooter/>
     </>
   );
 }

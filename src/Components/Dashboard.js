@@ -118,7 +118,7 @@ useEffect(()=>{
         },
         {
            title: "Total Users",
-          value: data.totalcategory,
+          value: data.totalCustomer,
           // icon: "fas fa-list",
           bg: "#10b981",
           link: "/admin/viewuser"

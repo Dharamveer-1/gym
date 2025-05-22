@@ -70,13 +70,14 @@ function ViewPackage() {
 
       <div className="row"></div>
     <div className="col-lg-12 text-center mb-4">
-      <h1 className=" fw-bold text-">View Package</h1><br></br>
-      <hr style={{ borderTop: "", width: "200px", margin: "auto", }} />
+           <h1 className="text-center fw-bold mb-4 text- display-3">
+  View <span style={{ color: "#ff6600" }}>Package</span>
+</h1>
        
        <div className="col-lg-12">
       <div className="table-responsive">
-        <table className="table table-bordered table-hover align-middle shadow-sm">
-          <thead className="table-primary text-center">
+        <table className="table table-bordered table-hover align-middle shadow-mb">
+          <thead className="table-dark text-center">
             <tr>
               <th>Sr No</th>
               <th>Package Name</th>

@@ -89,10 +89,11 @@ function ViewUser() {
   View <span style={{ color: "#ff6600" }}>Users</span>
 </h1>
     </div>
+    
     <div className="col-lg-12">
       <div className="table-responsive ">
         <table className="table table-bordered table-hover align-middle shadow-mb">
-          <thead className="table-primary text-center">
+          <thead className="table-dark text-center">
             <tr>
               <th>Sr No</th>
               <th>Name</th>

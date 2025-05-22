@@ -5,7 +5,9 @@ import { Form, useNavigate, useParams } from "react-router-dom"
   import axios from "axios"
   import { Link } from "react-router-dom"
 import UserHeader from "./UserHeader"
-//   import AdminHeader from "./AdminHeader"
+import UserFooter from "./UserFooter"
+
+
   
   function UserViewPackage(){
     const [data, setData] = useState([])
@@ -81,8 +83,8 @@ import UserHeader from "./UserHeader"
                               return (
                                   <>
                                       <div className="col-md-6 py-1">
-                                          <div className="card" style={{ minWidth: "20px" }}>
-                                           <img src={"http://localhost:2000/" + el.thumbnail} class="card-img-top" width="100px" alt="..."/>
+                                          <div className="card" style={{ minWidth: "50px" }}>
+                                           <img src={"http://localhost:2000/" + el.thumbnail} class="card-img-top" height={"400px"} alt="..."/>
                                               <div className="card-body">
                                            <h5 className="card-title">Package Name : {el.packageName}</h5>
 
@@ -135,6 +137,7 @@ import UserHeader from "./UserHeader"
             </tbody>
           </table> */}
         </div>
+        <UserFooter/>
       </>
     )
   }

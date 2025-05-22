@@ -63,9 +63,9 @@ function ViewCategory() {
         </div>
       </section>
       
-      <div className="container"></div>
+      {/* <div className="container"></div>
       <div className="row"></div>
-      <div className="col-lg-12 text-center"></div>
+      <div className="col-lg-12 text-center"></div> */}
       {/* <div className="row">
         <div className="col-lg-12 text-center">
           <h1>View Category</h1>
@@ -138,15 +138,22 @@ function ViewCategory() {
           </table>
         </div>
       </div> */}
+          <div className="container"></div>
+      <div className="row"></div>
+      <div className="col-lg-12 text-center"></div>
+
       <div className="row">
-  <div className="col-lg-12 text-center mb-4">
-    <h1 className="fw-bold text-">View Category</h1>
-    <hr style={{ borderTop: "", width: "200px", margin: "auto" }} />
+  <div className="col-lg-12 text-center mb-4"><br></br>
+         <h1 className="text-center fw-bold mb-4 text- display-3">
+  View <span style={{ color: "#ff6600" }}>Category</span>
+</h1>
   </div>
+           
+  
   <div className="col-lg-12">
     <div className="table-responsive">
-      <table className="table table-bordered table-hover align-middle shadow-sm">
-        <thead className="table-primary text-center">
+      <table className="table table-bordered table-hover align-middle shadow-mb">
+        <thead className="table-dark text-center">
           <tr>
             <th>Sr No</th>
             <th>Category Name</th>

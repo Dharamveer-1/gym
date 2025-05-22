@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Form, useNavigate, useParams } from "react-router-dom";
-
 import axios from "axios";
 import { Link } from "react-router-dom";
 import UserHeader from "./UserHeader";
-// import AdminHeader from "./AdminHeader"
+import UserFooter from "./UserFooter";
+
 
 function UserViewCategory() {
   const [data, setData] = useState([]);
@@ -95,6 +95,7 @@ function UserViewCategory() {
           })}
         </div>
       </div>
+      <UserFooter/>
     </>
   );
 }

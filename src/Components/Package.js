@@ -3,7 +3,7 @@ import AdminHeader from "./AdminHeader";
 import AdminFooter from "./AdminFooter";
 import axios from "axios";
 import { toast } from "react-toastify";
-import react from "react";
+// import react from "react";
 // react
 function Package() {
   const [packageName, setPackage] = useState("");
@@ -161,7 +161,7 @@ function Package() {
               <input
                 type="text"
                 value={packageName}
-                onChange={packageName}
+                onChange={changePackage}
                 className="form-control form-control-lg"
                 placeholder="Enter category name"
               />
