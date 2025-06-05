@@ -51,6 +51,7 @@ const Home = () =>{
       </div>
     </div>
   </section>
+
   
   {/* Hero Section End */}
   {/* ChoseUs Section Begin */}
