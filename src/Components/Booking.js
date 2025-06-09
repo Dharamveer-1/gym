@@ -12,12 +12,12 @@ import { toast } from "react-toastify";
 // react
 function Booking() {
   
-  const [accountHolder, setAccountHolder] = useState("");
+    const [accountHolder, setAccountHolder] = useState("");
     const [accountNumber, setAccountNumber] = useState("");
     const [cvv, setCvv] = useState("");
     const [paymentMode, setPaymentMode] = useState("");
     const [course, setCourse] = useState("");
-     const [price, setPrice] = useState("");
+    const [price, setPrice] = useState("");
 
       let param=useParams()
     const id=param.id
@@ -80,9 +80,6 @@ axios.post('http://localhost:2000/api/package/getsingle',data)
       </div>
     </div>
   </section>
-
-        
-       
 
             <div className="container">
                 <h1 className="text-center">Buy Package</h1><br></br>
